@@ -34,7 +34,7 @@ Ensure you have the following software installed on your local machine:
 1. **Clone the repository:**
    \`\`\`bash
    git clone https://github.com/jerrietkuo/TechBlog.git
-   cd tech-blog
+   cd TechBlog
    \`\`\`
 
 2. **Install dependencies:**
@@ -102,7 +102,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For questions or inquiries, please contact:
 
 - **Your Name**
-- **Email:** your.email@example.com
-- **GitHub:** [your-username](https://github.com/your-username)
+- **GitHub:** [Jerrietkuo](https://github.com/jerrietkuo)
+- **Email:** [jerrietkuo@gmail.com](mailto:jerrietkuo@gmail.com)
 
 Thank you for using Tech Blog!
