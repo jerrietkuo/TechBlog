@@ -1,6 +1,6 @@
 {
     "development": {
-      "username": "jerriet",
+      "username": "postgres",
       "password": "jk811002",
       "database": "tech_blog_db",
       "host": "process.env.DB_HOST",
