@@ -27,4 +27,37 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Render single blog post
+router.get('/dashboard', async (req, res) => {
+  try {
+    console.log('Dashboard route hit');
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
+    });
+
+    const user = userData.get({ plain: true });
+    console.log('User:', user);
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    console.error('Error fetching user data:', err);
+    res.status(500).json(err);
+  }
+} );
+
+// Render login page
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('login');
+} );
+
+
 module.exports = router;
