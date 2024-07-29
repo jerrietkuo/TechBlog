@@ -40,6 +40,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Use routes
 app.use(routes);
 
+app.get('/', (req, res) => {
+  res.render('main', {
+    loggedIn: req.session.loggedIn // or however you store the logged-in status
+  });
+});
+
 // Sync Sequelize models to the database, then start the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
